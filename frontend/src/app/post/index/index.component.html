@@ -1,0 +1,43 @@
+<div
+  class="container flex flex-col justify-center items-center tracking-normal leading-normal overflow-x-auto mt-40"
+>
+  <div
+    class="btn btn-success w-60 text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mb-4 mt-4 px-4 rounded items-center"
+  >
+    Create New Product
+  </div>
+
+  <h1 class="font-bold text-3xl mb-3">All the Products:</h1>
+  <div class="innercontainer flex flex-wrap gap-4 justify-center">
+    <ng-container *ngFor="let post of posts">
+      <div
+        class="innercontent hover:shadow-2xl flex flex-col sm:w-64 bg-slate-300 rounded-lg overflow-hidden w-full justify-between border border-solid border-slate-700 border-opacity-50"
+      >
+        <img class="w-screen h-40" src="{{ post.thumbnail }}" alt="Thumbnail" />
+        <div class="content-info p-4">
+          <h1 class="font-bold">{{ post.title }}</h1>
+          <p class="text-slate-600">{{ post.description }}</p>
+          <p>Price: ${{ post.price }}</p>
+          <p>Discount: {{ post.discountPercentage }}%</p>
+        </div>
+        <div class="editAnDelete flex justify-between gap:1">
+          <div
+            class="button bg-red-500 w-1/3 text-center hover:bg-red-700 text-white font-bold py-2 px-4 mr-2 rounded items-center"
+          >
+            Delete
+          </div>
+          <div
+            class="button bg-gray-500 w-1/3 text-center hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded items-center"
+          >
+            View
+          </div>
+          <div
+            class="button bg-blue-500 w-1/3 text-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

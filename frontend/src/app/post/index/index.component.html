@@ -1,43 +1,62 @@
 <div
-  class="container flex flex-col justify-center items-center tracking-normal leading-normal overflow-x-auto mt-40"
+  class="container min-w-full flex flex-col justify-center items-center tracking-normal leading-normal"
 >
-  <div
-    class="btn btn-success w-60 text-center bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 mb-4 mt-4 px-4 rounded items-center"
-  >
-    Create New Product
-  </div>
-
-  <h1 class="font-bold text-3xl mb-3">All the Products:</h1>
-  <div class="innercontainer flex flex-wrap gap-4 justify-center">
-    <ng-container *ngFor="let post of posts">
+  <div class="innercontainer w-10/12 my-40 flex flex-col justify-center">
+    <div class="TopButtons flex gap-2 mb-2">
       <div
-        class="innercontent hover:shadow-2xl flex flex-col sm:w-64 bg-slate-300 rounded-lg overflow-hidden w-full justify-between border border-solid border-slate-700 border-opacity-50"
+        [routerLink]="['/post/create']"
+        class="btn btn-success text-center bg-blue-700 hover:bg-blue-900 text-white font-bold p-2 px-4 rounded items-center"
       >
-        <img class="w-screen h-40" src="{{ post.thumbnail }}" alt="Thumbnail" />
-        <div class="content-info p-4">
-          <h1 class="font-bold">{{ post.title }}</h1>
-          <p class="text-slate-600">{{ post.description }}</p>
-          <p>Price: ${{ post.price }}</p>
-          <p>Discount: {{ post.discountPercentage }}%</p>
-        </div>
-        <div class="editAnDelete flex justify-between gap:1">
-          <div
-            class="button bg-red-500 w-1/3 text-center hover:bg-red-700 text-white font-bold py-2 px-4 mr-2 rounded items-center"
-          >
-            Delete
-          </div>
-          <div
-            class="button bg-gray-500 w-1/3 text-center hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded items-center"
-          >
-            View
-          </div>
-          <div
-            class="button bg-blue-500 w-1/3 text-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center"
-          >
-            Edit
-          </div>
-        </div>
+        Create New Product
       </div>
-    </ng-container>
+      <div
+        [routerLink]="['/post/create']"
+        class="btn btn-success text-center bg-blue-500 hover:bg-blue-700 text-white font-bold p-2 px-4 rounded items-center"
+      >
+        Filter
+      </div>
+    </div>
+
+    <div class="allcontent flex flex-wrap gap-7 justify-start w-full">
+      <ng-container *ngFor="let post of posts">
+        <div
+          class="innercontent hover:shadow-2xl flex flex-col sm:w-64 bg-slate-300 rounded-lg overflow-hidden w-full justify-between border border-solid border-slate-700 border-opacity-50"
+        >
+          <img
+            class="w-screen h-40"
+            src="{{ post.thumbnail }}"
+            alt="Thumbnail"
+          />
+          <div class="content-info p-4">
+            <h1 class="font-bold">{{ post.title }}</h1>
+            <p class="text-slate-600">{{ post.category }}</p>
+            <p>Price: ${{ post.price }}</p>
+            <p>Brand: {{ post.brand }}</p>
+          </div>
+          <div class="editAnDelete m-5 flex justify-between gap:1">
+            <button
+              (click)="deletePost(post.id)"
+              class="button bg-red-500 w-1/3 text-center hover:bg-red-700 text-white font-bold py-2 px-4 mr-2 rounded items-center"
+            >
+              Delete
+            </button>
+            <a
+              href="#"
+              [routerLink]="['/post/', post.id, 'view']"
+              class="button bg-gray-500 w-1/3 text-center hover:bg-blue-700 text-white font-bold py-2 px-4 mr-2 rounded items-center"
+            >
+              View
+            </a>
+            <a
+              href="#"
+              [routerLink]="['/post/', post.id, 'edit']"
+              class="button bg-blue-500 w-1/3 text-center hover:bg-blue-700 text-white font-bold py-2 px-4 rounded items-center"
+            >
+              Edit
+            </a>
+          </div>
+        </div>
+      </ng-container>
+    </div>
   </div>
 </div>

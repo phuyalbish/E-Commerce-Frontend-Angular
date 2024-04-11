@@ -8,6 +8,6 @@ export const routes: Routes = [
   { path: 'post', redirectTo: 'post/index', pathMatch: 'full' },
   { path: 'post/index', component: IndexComponent },
   { path: 'post/create', component: CreateComponent },
-  { path: 'post//:postId/view', component: ViewComponent },
-  { path: 'post//:postId/edit', component: EditComponent },
+  { path: 'post/:postId/view', component: ViewComponent },
+  { path: 'post/:postId/edit', component: EditComponent },
 ];

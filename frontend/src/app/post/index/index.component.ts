@@ -22,7 +22,15 @@ export class IndexComponent implements OnInit {
   getProduct() {
     this.postService.getAll().subscribe((data: ProductObject) => {
       this.posts = data.products;
-      console.log(data);
+      console.log('Bruhhh');
+      console.log(this.posts);
     });
+  }
+  deletePost(id: number) {
+    this.postService
+      .delete(id)
+      .subscribe(
+        (res) => (this.posts = this.posts.filter((items) => items.id !== id))
+      );
   }
 }

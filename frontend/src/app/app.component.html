@@ -1,1 +1,14 @@
+<div class="header w-full flex justify-center fixed z-2 bg-slate-500">
+  <div class="innercontainer w-10/12 my-5 flex justify-between items-center">
+    <div class="title font-bold text-3xl">ProductZilla</div>
+    <div class="buttons flex gap-4">
+      <a href="#" [routerLink]="['/post/create']" class="create">Create</a>
+      <a href="#" [routerLink]="['/post/index']" class="products">Products</a>
+      <a href="#" [routerLink]="['/post/index']" class="products">Profile</a>
+    </div>
+  </div>
+</div>
+
 <router-outlet />
+
+<!-- <div class="header w-full border border-black w">Footer</div> -->

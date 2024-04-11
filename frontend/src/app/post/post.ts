@@ -4,7 +4,7 @@ export interface Post {
   description: string;
   price: number;
   rating: number;
-  stick: number;
+  stock: number;
   brand: string;
   category: string;
   thumbnail: string;

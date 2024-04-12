@@ -33,7 +33,7 @@
       </div>
 
       <div class="form-group">
-        <label for="body"> Body: </label>
+        <label for="body"> Description: </label>
         <input
           type="text"
           name="description"
@@ -51,6 +51,140 @@
             "
           >
             Body is Required.
+          </div>
+        </div>
+      </div>
+
+      <!-- Price -->
+
+      <div class="form-group">
+        <label for="price"> Price: </label>
+        <input
+          type="number"
+          name="price"
+          id="price"
+          formControlName="price"
+          class="form-control border border-solid border-slate-700 border-opacity-50"
+        />
+        <div
+          *ngIf="f['price'].touched && f['price'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['price'].errors && f['price'].errors['required']">
+            Price is Required.
+          </div>
+        </div>
+      </div>
+
+      <!-- Discount Percentage -->
+
+      <div class="form-group">
+        <label for="price"> Discount %: </label>
+        <input
+          type="number"
+          name="discountPercentage"
+          id="discountPercentage"
+          formControlName="discountPercentage"
+          placeholder="0"
+          class="form-control border border-solid border-slate-700 border-opacity-50"
+        />
+        <div
+          *ngIf="
+            f['discountPercentage'].touched && f['discountPercentage'].invalid
+          "
+          class="alert alert-danger"
+        >
+          <div
+            *ngIf="
+              f['discountPercentage'].errors &&
+              f['discountPercentage'].errors['required']
+            "
+          >
+            Discount is Required.
+          </div>
+        </div>
+      </div>
+
+      <!-- Stock -->
+
+      <div class="form-group">
+        <label for="stock"> Stock: </label>
+        <input
+          type="number"
+          name="stock"
+          id="stock"
+          formControlName="stock"
+          class="form-control border border-solid border-slate-700 border-opacity-50"
+        />
+        <div
+          *ngIf="f['stock'].touched && f['stock'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['stock'].errors && f['stock'].errors['required']">
+            stock is Required.
+          </div>
+        </div>
+      </div>
+
+      <!-- Brand -->
+
+      <div class="form-group">
+        <label for="Brand"> Brand: </label>
+        <input
+          type="text"
+          name="Brand"
+          id="Brand"
+          formControlName="brand"
+          class="form-control border border-solid border-slate-700 border-opacity-50"
+        />
+        <div
+          *ngIf="f['brand'].touched && f['brand'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['brand'].errors && f['brand'].errors['required']">
+            Brand is Required.
+          </div>
+        </div>
+      </div>
+
+      <!-- Category -->
+
+      <div class="form-group">
+        <label for="Category"> Category: </label>
+        <input
+          type="text"
+          name="Category"
+          id="Category"
+          formControlName="category"
+          class="form-control border border-solid border-slate-700 border-opacity-50"
+        />
+        <div
+          *ngIf="f['category'].touched && f['category'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['category'].errors && f['category'].errors['required']">
+            Category is Required.
+          </div>
+        </div>
+      </div>
+
+      <!-- Rating -->
+
+      <div class="form-group">
+        <label for="rating"> Rating: </label>
+        <input
+          type="number"
+          name="rating"
+          id="rating"
+          formControlName="rating"
+          class="form-control border border-solid border-slate-700 border-opacity-50"
+        />
+        <div
+          *ngIf="f['rating'].touched && f['rating'].invalid"
+          class="alert alert-danger"
+        >
+          <div *ngIf="f['rating'].errors && f['rating'].errors['required']">
+            Rating is Required.
           </div>
         </div>
       </div>

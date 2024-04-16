@@ -57,11 +57,5 @@ export class ViewComponent implements OnInit {
       console.log(this.similarProduct);
     });
   }
-  // deletePost(id: number) {
-  //   this.postService
-  //     .delete(id)
-  //     .subscribe(
-  //       (res) => (this.post = this.post.filter((items) => items.id !== id))
-  //     );
-  // }
+  
 }

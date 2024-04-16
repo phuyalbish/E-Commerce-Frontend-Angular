@@ -21,9 +21,9 @@ export class PostService {
   constructor(private httpClient: HttpClient) {}
 
   // Get all Methods
-  getAll(): Observable<any> {
+  getAll(skip: number = 0): Observable<any> {
     return this.httpClient
-      .get(this.apiURL + '/products/')
+      .get(this.apiURL + `/products/?skip=${skip}`)
       .pipe(catchError((error: HttpErrorResponse) => throwError(error)));
   }
 

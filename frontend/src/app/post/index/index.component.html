@@ -58,5 +58,33 @@
         </div>
       </ng-container>
     </div>
+    <!-- Pagination buttons -->
+    <div class="flex justify-center mt-4">
+      <button
+        class="pagination-button bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-l"
+        (click)="onPageChange(currentPage - 1)"
+        [disabled]="currentPage === 1"
+      >
+        Previous
+      </button>
+      <ng-container
+        *ngFor="let page of [].constructor(pageNumbers); let r = index"
+      >
+        <button
+          class="pagination-button bg-gray-300 text-gray-700 font-semibold py-2 px-4"
+          (click)="onPageChange(r + 1)"
+          [class.active]="currentPage === r + 1"
+        >
+          {{ r + 1 }}
+        </button>
+      </ng-container>
+      <button
+        class="pagination-button bg-gray-300 text-gray-700 font-semibold py-2 px-4 rounded-r"
+        (click)="onPageChange(currentPage + 1)"
+        [disabled]="currentPage === totalPages"
+      >
+        Next
+      </button>
+    </div>
   </div>
 </div>
